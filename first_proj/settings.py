@@ -119,3 +119,10 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+# Static file (CSS, Javascript, Images)
+# https://docs.djangoproject.com/3.1/howto/static-files/
+
+STATIC_URL = '/static/'
+STATIC_ROOT = 'static'
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
