@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'polls',
 ]
 
 MIDDLEWARE = [
@@ -60,7 +61,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'SRC.urls'
+ROOT_URLCONF = 'first_proj.urls'
 
 TEMPLATES = [
     {
@@ -78,7 +79,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'SRC.wsgi.application'
+WSGI_APPLICATION = 'first_proj.wsgi.application'
 
 
 # Database
@@ -86,6 +87,19 @@ WSGI_APPLICATION = 'SRC.wsgi.application'
 
 DATABASES = {
     'default': env.db()
+"""""
+    'default': {
+        'ENGINE': 'django.db.backends.sqlites',
+        #Diz que tipo de banco de dados vc estara utilizando definindo o driver a utilizar
+        # POSTGRES : psyocpg2
+        #SQlite: sqlite3
+        #SQLServer: pyodbc
+        'NAME': '', # Nome do banco de dados
+        'HOST': '', #A IP ou Dominio do servidor de banco de dados
+        'PASSWORD':'', #A senha do banco de dados
+        'USER': '', #O usuario do banco de dados
+
+    }
 }
 
 
