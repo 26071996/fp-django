@@ -1,5 +1,5 @@
 """
-WSGI config for SRC project.
+WSGI config for First proj
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
