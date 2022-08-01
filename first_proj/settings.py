@@ -89,6 +89,7 @@ WSGI_APPLICATION = 'first_proj.wsgi.application'
 
 DATABASES = {
     'default': env.db(),
+}
 """"
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -102,7 +103,7 @@ DATABASES = {
         'USER': '', #O usuario do banco de dados
 
 },
-""""
+"""
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -140,7 +141,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = 'static' # a pasta onde os arquivos staticos estao.
+STATIC_ROOT = 'static'
+
+#a pasta onde os arquivos staticos estao.
 
 # A Classe que controla esses arquivos.
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
