@@ -10,7 +10,6 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
-
 import environ
 import os
 
@@ -18,6 +17,7 @@ env = environ.Env(
     # set casting, default value
     DEBUG=(bool, False)
 )
+
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -25,7 +25,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 print(f"BASE_DIR {BASE_DIR}")
 print(f"VENV PATH: {os.path.join(BASE_DIR, '.env')}")
-
 environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
 # Quick-start development settings - unsuitable for production
@@ -35,7 +34,7 @@ environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 SECRET_KEY = 'django-insecure-b3oitn3ps5&oba0uy8n=lt39#nvr$zx36dijj-&%k7wo6tyhvo'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*', 'pi-fd.herokuapp.com']
 
@@ -43,16 +42,17 @@ ALLOWED_HOSTS = ['*', 'pi-fd.herokuapp.com']
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'polls',
-    'polls_2'
+    'django.contrib.admin', # O Painel de Administracao
+    'django.contrib.auth', # o app com funcionalidades de autenticacao
+    'django.contrib.contenttypes', # O app com funcionalidades de relacoes dinamicas
+    'django.contrib.sessions',     # O app para a administracao de sessoes HTTP
+    'django.contrib.messages',     # O app para controle de mensagens SIMPLES
+    'django.contrib.staticfiles',  # O app para trabalhar com arquivos estaticos (HTML, JAVA )
+    'polls', # nosso app
+    'polls_2',
 ]
-
+# Classe que sao executadas no momento de processar uma request antes de executar um View
+#
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     "whitenoise.middleware.WhiteNoiseMiddleware",
@@ -64,8 +64,9 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'first_proj.urls'
+ROOT_URLCONF = 'first_proj.urls'  # define qual sera o modulo urls.py principal do projeto
 
+# simplesmente o sistema de Django
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -82,12 +83,14 @@ TEMPLATES = [
     },
 ]
 
+# O modulo principal do WSGI
 WSGI_APPLICATION = 'first_proj.wsgi.application'
 
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# As configuracoes do banco de dados
 DATABASES = {
     'default': env.db(),
 }
@@ -142,7 +145,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = 'static'
+STATIC_ROOT = 'static' # a pasta onde os arquivos estaticos estao
+
+# A Classe que controla estes arquivos
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
 
 #a pasta onde os arquivos staticos estao.
 

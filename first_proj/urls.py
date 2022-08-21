@@ -14,12 +14,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import p
-
-from django.contrib import admin
 from django.urls import path, include
 
+# Cadastrar as urls do APP no projeto.
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('polls.urls')),
+   path('admin/', admin.site.urls),
+   path('', include('polls.urls')),
+   # definindo um prefix para as urls dos app
+   path('poll/', include('polls_2.urls'))
 ]
