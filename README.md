@@ -1,9 +1,9 @@
 # fp-django
 # Estrutura do Projeto 
 ├── first_proj # Pasta do projeto de Django
-│ ├── asgi.py # Modulo que executa o ASGI (Async Server Gateway Interfaz) do projeto 
+│ ├── asgi.py #  Modulo que executa o ASGI (Async Server Gateway Interfaz) do projeto 
 │ ├── __init__.py # modulo que indica que as pasta é um pacote.
-│ ├── settings.py # Modulo onde se espeficia as configurações do django.
+│ ├── settings.py # arquivo importante do Django Modulo onde se espeficia as configurações do django.
 │ ├── urls.py #  # modulo onde se configurão as URL do Django
 │ └── wsgi.py # Modulo que executa o WSGI (Web Server Gateway Interface) do projeto.
 ├── manage.py # Arquivo cental de Django para interagir com o projeto.
