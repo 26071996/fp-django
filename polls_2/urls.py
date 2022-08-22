@@ -1,9 +1,8 @@
 """" Modulo para definicao de rotas do app"""
 from django.urls import path
-from django.views.generic import TemplateView
-
-from .views import index, yury, carlos, carlos_two, conversor, PrimeiraCBView, SegundoConversor, IndexView, \
-   ConversorSuperPower, ListaCategoria, CreateCategoria, DetailCategoria, update_categoria, delete_categoria
+from .views import index, yury, carlos, carlos_two, conversor, PrimeiraCBView, SegundoConversor, IndexView,\
+   ConversorSuperPower, ListaCategoria, CreateCategoria, DetailCategoria, update_categoria, delete_categoria,\
+   TemplateView
 
 #URLs config do app:
 #Define a relacao entre um path e uma view

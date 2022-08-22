@@ -101,8 +101,7 @@ def post(self, request):
         print("OS DADOS SAO VALIDOS!!!")
     return self.__render(
         request=request,
-        context={
-                'form': form}
+        context={'form': form}
         )
 
 
@@ -122,7 +121,6 @@ class SegundoConversor(PrimeiraCBView):
 # DRY: Don't Repeat Yourself
 # Generic Views: Sao views que tem comportamentos padrao.
 # 1. Renderizar simplesmente um template.
-
 from django.views.generic import TemplateView
 
 # 1. View

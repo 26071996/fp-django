@@ -12,7 +12,7 @@ from django.db import models
 # Olhar o detalhe de uma categoria - READ
 # Actualizar uma categoria - UPDATE
 # Apagar uma categoria - DELETE
-# C.R.U.D <=
+# C.R.U.D <= Cadastrar,
 # Lista das categorias cadastradas. - LIST [OK]
 
 class Category(models.Model):
